@@ -26,6 +26,7 @@ public class CharacterGen : MonoBehaviour
 
     private string[] Names = {"Apple", "Banana", "Watch", "Please", "New", "Shin", "Sam", "Ralala", "Hui", "Oppo"};
 
+
     [SerializeField]
     private InputField NameInput;
     [SerializeField]
@@ -47,7 +48,6 @@ public class CharacterGen : MonoBehaviour
 
     private void Awake()
     {
-        SetHPMP();
 
     }
 
