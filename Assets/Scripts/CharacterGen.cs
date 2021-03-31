@@ -24,6 +24,7 @@ public class CharacterGen : MonoBehaviour
     [SerializeField]
     private Text CharmTxt;
 
+    //names that will randomly appear by using the random button
     private string[] Names = {"Apple", "Banana", "Watch", "Please", "New", "Shin", "Sam", "Ralala", "Hui", "Oppo"};
 
 
@@ -46,18 +47,13 @@ public class CharacterGen : MonoBehaviour
     [SerializeField]
     private Slider CharmSld;
 
-    private void Awake()
-    {
-
-    }
-
 
     void Update()
     {
-        ConvertSlidertoTxt();
+        ConvertSlidertoTxt();//update the slider's value to the text to show the actual value
     }
 
-    public void SetHPMP()
+    public void SetHPMP()//this function is used to set hp and mp based on the generator input
     {
         HP = (int)ToughSld.value + (int)StrthSld.value;
         MP = (int)IQSld.value * 2;
@@ -65,11 +61,11 @@ public class CharacterGen : MonoBehaviour
         MPTxt.text = MP.ToString();
 
     }
-    public void ConvertInput()
+    public void ConvertInput()//convert input name to actual name
     {
         Name.text = NameInput.text;
     }
-    void ConvertSlidertoTxt()
+    void ConvertSlidertoTxt()//convert slider value to text
     {
         StrthTxt.text = ((int)StrthSld.value).ToString();
         ToughTxt.text = ((int)ToughSld.value).ToString();
@@ -79,7 +75,7 @@ public class CharacterGen : MonoBehaviour
         CharmTxt.text = ((int)CharmSld.value).ToString();
     }
 
-    public void RandomGen()
+    public void RandomGen()//randomly generate the value and name
     {
         Name.text = Names[(int)Random.Range(0, 10)];
         StrthSld.value = (int)Random.Range(0, 11);
